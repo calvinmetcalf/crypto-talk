@@ -68,15 +68,13 @@ This is useless by itself
 
 16 bit IV
 
-block 1: enc(plain text xor iv) = ciphertext 1
+block 1: enc( *plain text* xor *iv* ) = *ciphertext 1*
 
-block 2: enc(plain text xor ciphertext 1) = ciphertext 2
-
-simple
+block 2: enc( *plain text* xor *ciphertext 1* ) = *ciphertext 2*
 
 NOT SECURE DON'T USE
 
-enc(plainText-n xor CipherText-(n-1) xor lastCipherText) = cipherText-n
+enc( *plainText-n* xor *CipherText-(n-1)* xor *lastCipherText* ) = *cipherText-n*
 
 or
 
@@ -86,6 +84,6 @@ does this decrypt to that
 
 16 bit IV
 
-block 1: enc(iv) xor plain text 1 = ciphertext 1
+block 1: enc( *iv* ) xor *plain text 1* = *ciphertext 1*
 
-block 2: enc(iv + 1) xor plain text 2 = ciphertext 2
+block 2: enc( *iv* + 1) xor *plain text 2* = *ciphertext 2*
