@@ -1,6 +1,6 @@
 (function () {
     var xhr = new XMLHttpRequest();
-    xhr.open('get', './body.md');
+    xhr.open('get', './README.md');
     xhr.onload = function () {
         onLoad(xhr.responseText);
     };
@@ -27,7 +27,7 @@
                     e.className = ' even';
                 }else{
                     e.className = ' odd';
-                  
+
                 }
                 document.body.className = e.className;
             }
