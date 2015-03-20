@@ -76,4 +76,16 @@ simple
 
 NOT SECURE DON'T USE
 
-targetPlainText-n xor CipherText-(n-1) xor lastCipherText = 
+enc(plainText-n xor CipherText-(n-1) xor lastCipherText) = cipherText-n
+
+or
+
+does this decrypt to that
+
+*CTR*
+
+16 bit IV
+
+block 1: enc(iv) xor plain text 1 = ciphertext 1
+
+block 2: enc(iv + 1) xor plain text 2 = ciphertext 2
