@@ -84,6 +84,6 @@ does this decrypt to that
 
 16 bit IV
 
-block 1: enc( *iv* ) xor *plain text 1* = *ciphertext 1*
+block 1: enc( *iv* + 0) xor *plain text 1* = *ciphertext 1*
 
 block 2: enc( *iv* + 1) xor *plain text 2* = *ciphertext 2*
