@@ -1,5 +1,17 @@
 *Crypto Browserify*
 
+Hi I'm Calvin
+
+*Disclaimer*
+
+DOING ANY SORT OF CRYTO IN A REGULAR BROWSER SITE LOADED OVER HTTP WILL END IN TEARS
+
+*Cordova* and *NW.JS* are another matter
+
+also with *CSP*, *HTTPS* and  *App Cache* you come up with something usable
+
+*We Begin*
+
 All of cryptography was divided into three parts
 
 well not really, we're just going to 3 of them
@@ -45,3 +57,23 @@ node relies on some poorly documented features
 Only modern cipher Node (openssl) implements is AES
 
 16/24/32byte *key* + 16byte *plaintext* = 16byte *ciphertext*
+
+This is useless by itself
+
+*Mode Of Operation*
+
+16/24/32byte *key* + 16/12byte *IV/NONCE* + anysize *plaintext* = anysize *ciphertext*
+
+*CBC*
+
+16 bit IV
+
+block 1: enc(plain text xor iv) = ciphertext 1
+
+block 2: enc(plain text xor ciphertext 1) = ciphertext 2
+
+simple
+
+NOT SECURE DON'T USE
+
+targetPlainText-n xor CipherText-(n-1) xor lastCipherText = 
