@@ -140,3 +140,88 @@ and integer is *26971*
 
 *RSA*
 
+Also uses big numbers
+
+you have a *public* and *private* key
+
+things encrypted with one can be encrypted by the other
+
+but can't decrypt things encrypted with the same key
+
+so pick random number
+
+use it to encrypt message
+
+encrypt random number with person's public key
+
+send encrypted key and encrypted message
+
+with *RSA* someone steals key can decrypt all old messages
+
+not so with *diffie-hellman*
+
+*Authentication*
+
+Building block: *hash*
+
+put stuff in, get fixed length stuff out
+
+put in every so slightly different stuff in, get very different stuff out
+
+*HMAC*
+
+~HASH( *message* + *key* ) but better
+
+still need to send hmac key
+
+but can do something simple like
+
+"before encrypting anything encrypt 32 bytes of zeros"
+
+*Authenticated Encryption*
+
+AKA mode of operation plus mac
+
+2 for 1!
+
+*GCM*
+
+Modified counter mode (good)
+
+*GHASH* function (terrible)
+
+only one in node crypto lib
+
+(though chacha20/poly1305 is a different good one)
+
+*Public Key Signatures*
+
+*RSA*
+
+take hash of message
+
+encrypt with *private* key
+
+*DSA*
+
+1. pick a random number
+
+2. are you sure it's random?
+
+3. because if you ever repeat it, your key is leaked
+
+4. hope the NSA didn't back door any PRNGs
+
+or do what openssl (and node) don't do
+
+hmac( *private key*, *message* ) = will always be different
+
+*Eliptical Curves*
+
+Imagine integers but in 2 dimmentions
+
+or something I got no idea
+
+*Conclution*
+
+you're going to get hacked
