@@ -84,6 +84,59 @@ does this decrypt to that
 
 16 bit IV
 
-block 1: enc( *iv* + 0) xor *plain text 1* = *ciphertext 1*
+block 1: enc( *iv* ++) xor *plain text 1* = *ciphertext 1*
 
-block 2: enc( *iv* + 1) xor *plain text 2* = *ciphertext 2*
+block 2: enc( *iv* ++) xor *plain text 2* = *ciphertext 2*
+
+*GCM* variant
+
+12 bit IV
+
+block 1: enc( *iv* concat 0001) xor *plain text 1* = *ciphertext 1*
+
+block 2: enc( *iv* concat 0002) xor *plain text 2* = *ciphertext 2*
+
+*Secret Key Exchange*
+
+Requires *Big Numbers* or *Elliptical Curves*
+
+*Fedor* did the hard word for me
+
+Modulo is just like normal except with division
+
+*Diffie-Hellman*
+
+pick a large prime
+
+like really large
+
+and pick a base (like 2, some restrictions, kinda complex)
+
+these are agreed upon before hand
+
+pick a large integer 
+
+calculate *base* ^ *integer* mod *prime*
+
+send that to friend
+
+friend has done the same thing with a diff integer
+
+then you both go
+
+*thing they sent me* ^ *my integer* mod *prime*
+
+we get the same number
+
+the whole modpow thing is tricky
+
+huge performance differences
+
+if base is *2*
+
+and integer is *26971*
+
+*2* ^ *26971* = *8120* digit number
+
+*RSA*
+
