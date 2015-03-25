@@ -114,7 +114,7 @@ and pick a base (like 2, some restrictions, kinda complex)
 
 these are agreed upon before hand
 
-pick a large integer 
+pick a large integer
 
 calculate *base* ^ *integer* mod *prime*
 
@@ -218,10 +218,24 @@ hmac( *private key*, *message* ) = will always be different
 
 *Eliptical Curves*
 
-Imagine integers but in 2 dimmentions
+Imagine integers but in 2 dimensions
 
 or something I got no idea
 
-*Conclution*
+*PEM Files*
 
-you're going to get hacked
+are an abomination
+
+*PBKDF2*
+
+Like a hash but slower
+
+*Conclutions*
+
+the Node.js crypto api wasn't designed with you in mind
+
+it was designed for internal use
+
+it is very easy to use wrong
+
+but very powerful primitives
