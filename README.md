@@ -10,6 +10,16 @@ DOING ANY SORT OF CRYTO IN A REGULAR BROWSER SITE LOADED OVER HTTP WILL END IN T
 
 also with *CSP*, *HTTPS* and  *App Cache* you come up with something usable
 
+*Acknowledgements*
+
+Was not done by me on my own
+
+*Dominic Tarr*, *Daniel Cousens*, and *JP Richardson* had done previous work
+
+Much of my work made possible by stuff from *Fedor Indutny*
+
+Other stuff based on *CryptoJS* and the *SJCL*
+
 *We Begin*
 
 All of cryptography was divided into three parts
@@ -44,9 +54,9 @@ Plus node doesn't have it.
 
 *Background on node crypto*
 
-Think layer around openssl
+Think layer around *openssl*
 
-yes that openssl
+yes that *openssl*
 
 node relies on some poorly documented features
 
@@ -204,13 +214,13 @@ encrypt with *private* key
 
 *DSA*
 
-1. pick a random number
+1.pick a random number
 
-2. are you sure it's random?
+2.are you sure it's random?
 
-3. because if you ever repeat it, your key is leaked
+3.because if you ever repeat it, your key is leaked
 
-4. hope the NSA didn't back door any PRNGs
+4.hope the NSA didn't back door any PRNGs
 
 or do what openssl (and node) don't do
 
@@ -226,11 +236,29 @@ or something I got no idea
 
 are an abomination
 
+*More Stuff If I have Time*
+
+*Other NODE CRYPTO STUFF*
+
 *PBKDF2*
 
 Like a hash but slower
 
-*Conclutions*
+*randomBytes*
+
+cryptographically secure random bytes for all
+
+*modularized!*
+
+*randombytes* & *create-hash*
+
+*create-hmac* & *pbkdf2*
+
+*diffie-hellman* & *create-ecdh*
+
+*browserify-sign*, *browserify-aes* & *public-encrypt*
+
+*Other Opinions*
 
 the Node.js crypto api wasn't designed with you in mind
 
@@ -239,5 +267,3 @@ it was designed for internal use
 it is very easy to use wrong
 
 but very powerful primitives
-
-*More Stuff If I have Time*
